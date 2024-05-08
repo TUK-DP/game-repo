@@ -1,0 +1,15 @@
+services:
+  dp-game:
+    image: twoone14/dp-game:0.3
+    container_name: game
+    networks:
+      - dp_dp
+    restart: always
+    ports: 
+      - "3000:3000"
+    volumes:
+      - ./public:/app/public
+
+networks:
+  dp_dp:
+    external: true
